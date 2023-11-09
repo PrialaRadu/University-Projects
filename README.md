@@ -16,32 +16,35 @@ What is the purpose of the application?
 
 
 
-References:
+REFERENCES:
 
-Line 4 - 149: Functions that modify/print the list containing all expenses.
-   line 4 - 25: Add functions
-   line 28 - 57: Remove functions
-   line 60 - 89: Search functions
-   line 92 - 128: Reports functions
-   line 131 - 149: Filter functions
+Functions that modify/print the list containing all expenses:
+- Line 4 - 25: Add functions
+- Line 28 - 57: Remove functions
+- Line 60 - 89: Search functions
+- Line 92 - 128: Reports functions
+- Line 131 - 149: Filter functions
 
-Line 152 - 249: Test functions that check the validity of various variables.
-   line 153 - 166: Checks the validity of 'day' variable
-   line 169 - 182: Checks the validity of 'total' variable
-   line 185 - 200: Checks the validity of 'type_p' variable
-   line 203 - 217: Checks the validity of 'id_p' variable
-   line 220 - 233: Checks the validity of 'num' variable
-   line 236 - 249: Checks the validity of 'response' variable
+Test functions that check the validity of various variables:
+- Line 153 - 166: Checks the validity of 'day' variable
+- Line 169 - 182: Checks the validity of 'total' variable
+- Line 185 - 200: Checks the validity of 'type_p' variable
+- Line 203 - 217: Checks the validity of 'id_p' variable
+- Line 220 - 233: Checks the validity of 'num' variable
+- Line 236 - 249: Checks the validity of 'response' variable
 
-Line 252 - 413: Submenus for the console application. Used for verifying variable validity and calling functions.
-   line 253 - 282: First submenu (Add menu)
-   line 285 - 316: Second submenu (Remove menu)
-   line 319 - 350: Third submenu (Search menu)
-   line 353 - 386: Fourth submenu (Reports menu)
-   line 389 - 413: Fifth submenu (Filter menu)
+Submenus for the console application. Used for verifying variable validity and calling functions:
+- Line 253 - 282: First submenu (Add menu)
+- Line 285 - 316: Second submenu (Remove menu)
+- Line 319 - 350: Third submenu (Search menu)
+- Line 353 - 386: Fourth submenu (Reports menu)
+- Line 389 - 413: Fifth submenu (Filter menu)
 
-Line 416 - 450: The main menu for the console application. Used for calling submenus.
+The main menu for the console application. Used for calling submenus:
+- Line 416 - 450
 
-Line 453 - 466: The end menu for the console application. Used for exiting or restarting the main menu.
+The end menu for the console application. Used for exiting or restarting the main menu:
+- Line 453 - 466
 
-Line 469 - 479: Main program. Used for defining the list containing all expenses and calling the main menu and end menu.
+Main program. Used for defining the list containing all expenses and calling the main menu and end menu:
+- Line 469 - 479
