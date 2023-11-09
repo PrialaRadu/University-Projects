@@ -1,7 +1,7 @@
 SUMMARY:
 
 What is the purpose of the application?
-   It manages family expenses incurred in a month, as a console application.
+   It manages family expenses incurred in a month, serving as a console-based program.
    An expense contains the following details:
       - id
       - day (of the month)
