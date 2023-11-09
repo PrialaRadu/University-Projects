@@ -1,22 +1,3 @@
-Progress: 09/11/2023
-
-1. Rectified a few grammatical errors in documentation.
-     5 minutes
-2. Refactored all functions (that modify/print the list) to achieve a more concise structure, reducing each to one line of code.
-     15 minutes
-3. Rectified all 'PEP 8' violations in the codebase.
-     10 minutes
-4. Implemented 6 test functions using the 'assert' function to verify the validity of variables (id, day, total, category, num, response).
-     1 hour 10 minutes
-6. Rewrote the submenus in a more concise and simple form.
-     25 minutes
-7. Wrote a short summary where I detailed the purpose of the application and provided explicit references to the location of each functionality within the code.
-     20 minutes
-
-Estimated time: 2 hours and 25 minutes
-
-
-
 SUMMARY:
 
 What is the purpose of the application?
