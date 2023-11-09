@@ -1,13 +1,13 @@
 SUMMARY:
 
 What is the purpose of the application?
-   - It manages family expenses incurred in a month, serving as a console-based program.
-   - An expense contains the following details:
+   It manages family expenses incurred in a month, serving as a console-based program.
+   An expense contains the following details:
       - id
       - day (of the month)
       - amount
       - type of expense (food, utilities, clothes, phone, others, maintenance)
-   - The application is able to perform the following functionalities on the list of expenses:
+   The application is able to perform the following functionalities on the list of expenses:
       - Add
       - Remove
       - Search
