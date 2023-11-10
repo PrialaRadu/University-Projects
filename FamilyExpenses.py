@@ -1,7 +1,8 @@
 # P3. Family Expenses
 
 
-# 1 Add
+# DOMAIN   <===========================================================================================================
+# 1 Add Functions
 def add_new_expense(expenses, day, total, type_p):
     """
     The function adds a new expense to the list 'expenses'.
@@ -25,7 +26,7 @@ def update_expense(expenses, id_p, new_exp):
     expenses[id_p - 1] = [val for exp in expenses if exp[0] == id_p for val in new_exp]
 
 
-# 2 Remove
+# 2 Remove functions
 def delete_expenses_in_day(expenses, day):
     """
     The function deletes expenses in a specified day.
@@ -57,7 +58,7 @@ def delete_expenses_of_type(expenses, type_p):
     expenses[:] = [exp for exp in expenses if exp[3] != type_p]
 
 
-# 3 Search
+# 3 Search functions
 def print_expenses_greater_than_num(expenses, num):
     """
     The function returns all expenses that are greater than a specified number.
@@ -89,7 +90,7 @@ def print_all_expenses_of_type(expenses, type_p):
     return [exp for exp in expenses if exp[3] == type_p]
 
 
-# 4 Reports
+# 4 Reports functions
 def print_sum_of_types(expenses, type_p):
     """
     The function returns the sum of all expenses of a specified category.
@@ -128,7 +129,7 @@ def print_exp_sorted_by_type(expenses):
     return sorted(expenses, key=lambda x: x[3])
 
 
-# 5 Filter
+# 5 Filter functions
 def remove_exp_based_on_type(expenses, type_p):
     """
     The function removes all expenses of a specified category.
@@ -149,7 +150,7 @@ def remove_exp_smaller_than_sum(expenses, num):
     expenses[:] = [exp for exp in expenses if exp[2] > num]
 
 
-# TEST FUNCTIONS
+# TEST FUNCTIONS   <===================================================================================================
 def validate_day_variable():
     """
     The function continuously prompts the user to input a day value and ensures that the input is a valid integer.
@@ -160,7 +161,7 @@ def validate_day_variable():
     while True:
         try:
             day = int(input("Type the day: "))
-            assert 1 <= day <= 31, "Invalid value for day. Please type a value between 1 and 31!"
+            assert 1 <= day <= 31, "Invalid value for day. Please type a value between 1 and 31! "
             return day
         except (ValueError, AssertionError) as e:
             print(e)
@@ -176,7 +177,7 @@ def validate_total_variable():
     while True:
         try:
             total = float(input("Type the total expense: "))
-            assert total > 0, "Invalid value for total expense. Type a value greater than 0!"
+            assert total > 0, "Invalid value for total expense. Type a value greater than 0! "
             return total
         except (ValueError, AssertionError) as e:
             print(e)
@@ -210,7 +211,7 @@ def validate_id_p_variable():
     while True:
         try:
             id_p = int(input("Type the id of the expense you want do modify: "))
-            invalid_mes = f"Invalid id. Type a value between 1 and {len(user_expenses)}!"
+            invalid_mes = f"Invalid id. Type a value between 1 and {len(user_expenses)}! "
             assert 1 <= id_p <= len(user_expenses), invalid_mes
             return id_p
         except (ValueError, AssertionError) as e:
@@ -227,7 +228,7 @@ def validate_num_variable():
     while True:
         try:
             num = float(input("Type the value: "))
-            assert num > 0, "Invalid value. Type a value greater than 0 !"
+            assert num > 0, "Invalid value. Type a value greater than 0! "
             return num
         except (ValueError, AssertionError) as e:
             print(e)
@@ -243,13 +244,13 @@ def validate_response(start, end):
     while True:
         try:
             resp = int(input())
-            assert start <= resp <= end, f"Invalid response. Type a value between {start} and {end}!"
+            assert start <= resp <= end, f"Invalid response. Type a value between {start} and {end}! "
             return resp
         except (ValueError, AssertionError) as e:
             print(e)
 
 
-# SUBMENUS
+# UI   <===============================================================================================================
 def menu1():
     """
     The function acts as a submenu (Add menu) for the console application.
@@ -260,13 +261,13 @@ def menu1():
     Can return the user back to the main menu, if needed.
     :return: No return
     """
-    print("1 - Add new expense \n"
-          "2 - Update expense \n"
-          "0 - Go back \n")
+    print("1 - Add new expense. \n"
+          "2 - Update expense. \n"
+          "0 - Go back. \n")
     resp = validate_response(0, 2)
 
     if resp == 0:
-        menu()
+        main_menu()
 
     elif resp == 1:
         user_day = validate_day_variable()
@@ -293,14 +294,14 @@ def menu2():
     Can return the user back to the main menu, if needed.
     :return: No return
     """
-    print("1 - Delete expenses in a day: \n"
-          "2 - Delete expenses in a range of days: \n"
-          "3 - Delete expenses of a category: \n"
-          "0 - Go back \n")
+    print("1 - Delete expenses in a day. \n"
+          "2 - Delete expenses in a range of days. \n"
+          "3 - Delete expenses of a category. \n"
+          "0 - Go back. \n")
     resp = validate_response(0, 3)
 
     if resp == 0:
-        menu()
+        main_menu()
 
     elif resp == 1:
         user_day = validate_day_variable()
@@ -327,14 +328,14 @@ def menu3():
     Can return the user back to the main menu, if needed.
     :return: No return
     """
-    print("1 - Print all expenses greater than a value \n"
-          "2 - Print all expenses before a certain day, smaller than a value \n"
-          "3 - Print all expenses of a certain category \n"
-          "0 - Go back \n")
+    print("1 - Print all expenses greater than a value. \n"
+          "2 - Print all expenses before a certain day, smaller than a value. \n"
+          "3 - Print all expenses of a certain category. \n"
+          "0 - Go back. \n")
     resp = validate_response(0, 3)
 
     if resp == 0:
-        menu()
+        main_menu()
 
     elif resp == 1:
         user_num = validate_num_variable()
@@ -361,22 +362,22 @@ def menu4():
     Can return the user back to the main menu, if needed.
     :return: No return
     """
-    print("1 - Print the total sum of expenses of a certain category \n"
-          "2 - Find the day with the maximum amount of expenses \n"
-          "3 - Print all expenses that are equal to a number \n"
-          "4 - Print all expenses sorted by the category \n"
-          "0 - Go back")
+    print("1 - Print the total sum of expenses of a certain category. \n"
+          "2 - Find the day with the maximum amount of expenses. \n"
+          "3 - Print all expenses that are equal to a number. \n"
+          "4 - Print all expenses sorted by the category. \n"
+          "0 - Go back. ")
     resp = validate_response(0, 4)
 
     if resp == 0:
-        menu()
+        main_menu()
 
     elif resp == 1:
         user_type_p = validate_type_p_variable()
         print(print_sum_of_types(user_expenses, user_type_p))
 
     elif resp == 2:
-        print(f"Day {find_day_of_sum_max(user_expenses)} has the maximum amount of expenses")
+        print(f"Day {find_day_of_sum_max(user_expenses)} has the maximum amount of expenses! ")
 
     elif resp == 3:
         user_num = validate_num_variable()
@@ -396,13 +397,13 @@ def menu5():
     Can return the user back to the main menu, if needed.
     :return: No return
     """
-    print("1 - Remove all expenses of a certain category \n"
-          "2 - Remove all expenses smaller than a value \n"
-          "0 - Go back")
+    print("1 - Remove all expenses of a certain category. \n"
+          "2 - Remove all expenses smaller than a value. \n"
+          "0 - Go back. ")
     resp = validate_response(0, 2)
 
     if resp == 0:
-        menu()
+        main_menu()
 
     elif resp == 1:
         user_type_p = validate_type_p_variable()
@@ -413,7 +414,7 @@ def menu5():
         remove_exp_smaller_than_sum(user_expenses, user_num)
 
 
-def menu():
+def main_menu():
     """
     The function acts as a main menu for the console application.
     Used for calling the following submenus:
@@ -422,14 +423,14 @@ def menu():
        - menu3()
        - menu4()
        - menu5()
-    Handles all possible errors.
+    Handles all possible errors using 'validate_response()' function.
     :return: No return
     """
-    print("1 - Add expense \n"
-          "2 - Remove expense \n"
-          "3 - Search expense \n"
-          "4 - Reports on expenses \n"
-          "5 - Filter expenses \n")
+    print("1 - Add expense. \n"
+          "2 - Remove expense. \n"
+          "3 - Search expense. \n"
+          "4 - Reports on expenses. \n"
+          "5 - Filter expenses. \n")
     resp = validate_response(1, 5)
 
     if resp == 1:
@@ -451,29 +452,39 @@ def menu():
 
 
 def end_menu():
-    print("1 - Print all expenses and EXIT THE MENU \n"
-          "2 - Print all expenses and RESTART THE MENU \n")
+    """
+    The function acts as an end menu for the console application.
+    Used for the following actions:
+       - Print and Exit
+       - Print and Restart
+    Handles all possible errors using 'validate_response()' function.
+    :return: No return
+    """
+    print("1 - Print all expenses and EXIT THE MENU. \n"
+          "2 - Print all expenses and RESTART THE MENU. \n")
     resp = validate_response(1, 2)
 
+    for user_exp in user_expenses:
+        print(user_exp)
+
     if resp == 1:
-        for user_exp in user_expenses:
-            print(user_exp)
+        pass
 
     elif resp == 2:
-        for user_exp in user_expenses:
-            print(user_exp)
         print()
-        menu()
+        main_menu()
 
 
+# MAIN   <=============================================================================================================
 if __name__ == '__main__':
     user_expenses = [[1,  3, 131, "food"],
                      [2,  7,  86, "phone"],
-                     [3, 11,  31, "food"],
-                     [4, 13,  25, "maintenance"],
-                     [5, 21,  13, "food"],
-                     [6, 27, 119, "clothes"],
-                     [7, 28, 251, "others"]]
+                     [3, 11, 191, "food"],
+                     [4, 13, 203, "maintenance"],
+                     [5, 19, 355, "utilities"],
+                     [6, 21,  13, "food"],
+                     [7, 27, 155, "clothes"],
+                     [8, 28,  73, "others"]]
 
-    menu()
+    main_menu()
     end_menu()
