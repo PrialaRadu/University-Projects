@@ -46,7 +46,7 @@ The main menu for the console application. Used for calling submenus:
 - Line 416 - 450
 
 The end menu for the console application. Used for exiting or restarting the main menu:
-- Line 453 - 466
+- Line 453 - 475
 
 Main program. Used for defining the list containing all expenses and calling the main menu and end menu:
-- Line 469 - 479
+- Line 478 - 490
