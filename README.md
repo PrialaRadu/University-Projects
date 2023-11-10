@@ -7,7 +7,7 @@ An expense contains the following details:
    - id
    - day (of the month)
    - amount
-   - type of expense (food, utilities, clothes, phone, others, maintenance)
+   - type of expense (food, utilities, clothes, phone, maintenance, others)
 
 The application is able to perform the following functionalities on the list of expenses:
    - Add
