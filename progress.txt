@@ -14,3 +14,8 @@ Progress: 09/11/2023
      20 minutes
 
 Estimated time: 2 hours and 25 minutes
+
+
+TO DO:
+- Break down the primary code into modular components.
+- Implement a dedicated function to retrieve and manage all expenses from user input.
