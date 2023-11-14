@@ -1,21 +1,16 @@
 Progress: 09/11/2023
 
-1. Rectified a few grammatical errors in documentation.
-     5 minutes
-2. Refactored all functions (that modify/print the list) to achieve a more concise structure, reducing each to one line of code.
-     15 minutes
-3. Rectified all 'PEP 8' violations in the codebase.
-     10 minutes
-4. Implemented 6 test functions using the 'assert' function to verify the validity of variables (id, day, total, category, num, response).
-     1 hour 10 minutes
-6. Rewrote the submenus in a more concise and simple form.
-     25 minutes
-7. Wrote a short summary where I detailed the purpose of the application and provided explicit references to the location of each functionality within the code.
-     20 minutes
+1. Refactored all functions (that modify/print the list) to achieve a more concise structure, reducing each to one line of code.
 
-Estimated time: 2 hours and 25 minutes
+2. Implemented 6 test functions using the 'assert' function to verify the validity of variables (id, day, total, category, num, response).
+
+3. Rewrote the submenus in a more concise and simple form.
+
+4. Wrote a short summary where I detailed the purpose of the application and provided explicit references to the location of each functionality within the code.
 
 
-TO DO:
-- Break down the primary code into modular components.
-- Implement a dedicated function to retrieve and manage all expenses from user input.
+Progress: 14/11/2023
+
+1. Divided the primary code into modular components (main, domain_functions, test_functions, user_interface)
+
+2. Implemented a dedicated function (get_user_expenses) to retrieve and manage all expenses from user input.
