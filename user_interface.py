@@ -202,7 +202,7 @@ def main_menu(expenses):
           "4 - Reports on expenses. \n"
           "5 - Filter expenses. \n"
           "0 - Go back")
-    resp = validate_response(0, 5)
+    resp = validate_response(1, 5)
 
     if resp == 1:
         menu1(expenses)
@@ -218,9 +218,6 @@ def main_menu(expenses):
 
     elif resp == 5:
         menu5(expenses)
-
-    elif resp == 0:
-        start_menu(expenses)
 
     print()
 
