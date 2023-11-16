@@ -1,7 +1,7 @@
 # UI
 
-from domain_functions import *
-from test_functions import *
+from project.functionalities.domain_functions import *
+from project.variables.validate_variables import *
 
 
 # Add menu
@@ -26,14 +26,14 @@ def menu1(expenses):
     elif resp == 1:
         user_day = validate_day_variable()
         user_total = validate_total_variable()
-        user_type_p = validate_type_p_variable()
+        user_type_p = validate_category_variable()
         add_new_expense(expenses, user_day, user_total, user_type_p)
 
     elif resp == 2:
         user_id_p = validate_id_p_variable(expenses)
         user_day = validate_day_variable()
         user_total = validate_total_variable()
-        user_type_p = validate_type_p_variable()
+        user_type_p = validate_category_variable()
         update_expense(expenses, user_id_p, [user_id_p, user_day, user_total, user_type_p])
 
 
@@ -68,8 +68,8 @@ def menu2(expenses):
         delete_expenses_in_days_range(expenses, user_start_day, user_end_day)
 
     elif resp == 3:
-        user_type_p = validate_type_p_variable()
-        delete_expenses_of_type(expenses, user_type_p)
+        user_type_p = validate_category_variable()
+        delete_expenses_of_category(expenses, user_type_p)
 
 
 # Search menu
@@ -95,16 +95,16 @@ def menu3(expenses):
 
     elif resp == 1:
         user_num = validate_num_variable()
-        print(print_expenses_greater_than_num(expenses, user_num))
+        print(return_expenses_greater_than_num(expenses, user_num))
 
     elif resp == 2:
         user_day = validate_day_variable()
         user_num = validate_num_variable()
-        print(print_exp_gr_than_num_before_day(expenses, user_day, user_num))
+        print(return_exp_gr_than_num_before_day(expenses, user_day, user_num))
 
     elif resp == 3:
-        user_type_p = validate_type_p_variable()
-        print(print_all_expenses_of_type(expenses, user_type_p))
+        user_type_p = validate_category_variable()
+        print(return_all_expenses_of_category(expenses, user_type_p))
 
 
 # Reports menu
@@ -130,18 +130,18 @@ def menu4(expenses):
         main_menu(expenses)
 
     elif resp == 1:
-        user_type_p = validate_type_p_variable()
-        print(print_sum_of_types(expenses, user_type_p))
+        user_type_p = validate_category_variable()
+        print(return_sum_of_category(expenses, user_type_p))
 
     elif resp == 2:
-        print(f"Day {find_day_of_sum_max(expenses)} has the maximum amount of expenses! ")
+        print(f"Day {return_day_of_sum_max(expenses)} has the maximum amount of expenses! ")
 
     elif resp == 3:
         user_num = validate_num_variable()
-        print(print_exp_equal_to_sum(expenses, user_num))
+        print(return_exp_equal_to_num(expenses, user_num))
 
     elif resp == 4:
-        print(print_exp_sorted_by_type(expenses))
+        print(return_exp_sorted_by_category(expenses))
 
 
 # Filter menu
@@ -164,12 +164,12 @@ def menu5(expenses):
         main_menu(expenses)
 
     elif resp == 1:
-        user_type_p = validate_type_p_variable()
-        remove_exp_based_on_type(expenses, user_type_p)
+        user_type_p = validate_category_variable()
+        remove_exp_based_on_category(expenses, user_type_p)
 
     elif resp == 2:
         user_num = validate_num_variable()
-        remove_exp_smaller_than_sum(expenses, user_num)
+        remove_exp_smaller_than_num(expenses, user_num)
 
 
 # Start menu
@@ -179,7 +179,7 @@ def start_menu(expenses):
     Prints a starting message and calls the 'get_user_expenses' function
     :return: No return
     """
-    print("Consider adding at least one expense: ")
+    print("Consider adding at least one expense. ")
     get_user_expenses(expenses)
 
 
@@ -201,7 +201,7 @@ def main_menu(expenses):
           "3 - Search expense. \n"
           "4 - Reports on expenses. \n"
           "5 - Filter expenses. \n"
-          "0 - Go back")
+          "0 - Go back. ")
     resp = validate_response(1, 5)
 
     if resp == 1:
@@ -236,8 +236,7 @@ def end_menu(expenses):
           "2 - Print all expenses and RESTART THE MENU. \n")
     resp = validate_response(1, 2)
 
-    for exp in expenses:
-        print(exp)
+    print_expenses(expenses)
 
     if resp == 1:
         pass
@@ -245,3 +244,7 @@ def end_menu(expenses):
     elif resp == 2:
         print()
         main_menu(expenses)
+
+
+def print_expenses(expenses):
+    print(expenses)
