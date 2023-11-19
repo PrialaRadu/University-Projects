@@ -5,7 +5,7 @@ from project.variables.get_variables import *
 # 1 Add Functions
 def add_new_expense(expenses, day, total, category):
     """
-    The function adds a new expense to the list 'expenses'.
+    The function adds a new expense to the dict 'expenses'.
     :param expenses: The dictionary that contains all expenses
     :param day: Expense day
     :param total: Total expense.
@@ -17,10 +17,10 @@ def add_new_expense(expenses, day, total, category):
 
 def update_expense(expenses, id_p, new_exp):
     """
-    The function updates an expense from the list 'expenses' with new value/values.
+    The function updates an expense from the dict 'expenses' with new value/values.
     :param expenses: The dictionary that contains all expenses
     :param id_p: Expense ID
-    :param new_exp: The new expense values, in format: [id, new_day, new_total, new_type]
+    :param new_exp: The new expense values, in format: id: {'day': new_day, 'total': new_total, 'category': new_type}
     :return: No return
     """
     expenses[id_p] = new_exp
@@ -79,7 +79,7 @@ def return_expenses_greater_than_num(expenses, num):
     The function returns all expenses that are greater than a specified number.
     :param expenses: The dictionary containing all expenses
     :param num: The number used for comparison
-    :return: Returns a new list, with expenses that are greater than 'num'.
+    :return: Returns a new dictionary, with expenses that are greater than 'num'.
     """
     new_dict = {}
     for key, value in expenses.items():
@@ -94,7 +94,7 @@ def return_exp_gr_than_num_before_day(expenses, day, num):
     :param expenses: The dictionary containing all expenses
     :param day: Expense day
     :param num: The number used for comparison
-    :return: Returns a new list, containing expenses that are greater than 'num' and are after 'day'.
+    :return: Returns a new dictionary, containing expenses that are greater than 'num' and are after 'day'.
     """
     new_dict = {}
     for key, value in expenses.items():
@@ -108,7 +108,7 @@ def return_all_expenses_of_category(expenses, category):
     The function returns all expenses of a specified category.
     :param expenses: The dictionary containing all expenses
     :param category: Expense category
-    :return: Returns a new list, containing expenses that are of a specified category.
+    :return: Returns a new dictionary, containing expenses that are of a specified category.
     """
     new_dict = {}
     for key, value in expenses.items():
