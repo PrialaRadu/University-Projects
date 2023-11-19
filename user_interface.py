@@ -34,7 +34,7 @@ def menu1(expenses):
         user_day = validate_day_variable()
         user_total = validate_total_variable()
         user_type_p = validate_category_variable()
-        update_expense(expenses, user_id_p, [user_id_p, user_day, user_total, user_type_p])
+        update_expense(expenses, user_id_p, {'day': user_day, 'total': user_total, 'category': user_type_p])
 
 
 # Remove menu
